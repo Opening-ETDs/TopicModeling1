@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <title>ETD Topic Browser</title>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+</head>
+<body>
+
+    <!-- <form action = "http://localhost:5000/" method = "post">
+        <p>Enter Name:</p>
+        <p><input type = "text" name = "ab" /></p>
+        <p>Enter Name:</p>
+        <p><input type = "text" name = "nm" /></p>
+        <p><input type = "submit" value = "submit" /></p>
+     </form> -->
+    <h1>ETD Topic Browser</h1>
+<form action = "http://localhost:5000/" method="post" style="font-family:'Open Sans';position: right; display: inline-block;text-align: left;">
+    <label action = "http://localhost:5000/" method = "post" label for="TM" style="font-family:'Open Sans';font-size:25px; text-align: left;">Choose a Topic Model:</label>
+        <select name="ab" id="TM"  style="font-family:'Open Sans';font-size: large; text-align: left;">
+            <option value="CTM">CTM</option>
+            <option value="LDA">LDA</option>
+            <option value="ProdLDA">ProdLDA</option>
+            <option value="NeuralLDA">NeuralLDA</option>
+        </select>
+    
+    <label action = "http://localhost:5000/" method = "post" label for="TopicNumber" style="font-family:'Open Sans'; font-size:25px;">Choose Number of Topics:</label>
+        <select name="nm" id="TopicNumber" style="font-family:'Open Sans'; font-size: large; text-align: left;">
+            <option value="50">50</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="100">100</option>
+        </select>
+   
+    <button class = "button-3" name="action" value="first" type="submit" style="font-family:'Open Sans';">Show Model</button>
+    <br /><br />
+    <label action = "http://localhost:5000/" method = "post" label for="Keywords" style="font-family:\'Open Sans\';font-size:25px; text-align: left;">Search Keywords:</label><input type="text" name="Keyword" id="start year">&emsp;
+    <label action = "http://localhost:5000/" method = "post" label for="Method" style="font-family:'Open Sans'; font-size:25px;">Search Method:</label>
+        <select name="Method" id="TopicNumber" style="font-family:'Open Sans'; font-size: large; text-align: left;">
+            <option value="BM25">BM25</option>
+            <option value="TF-IDF">TF-IDF</option>
+            <option value="Vector Search">Vector Search</option>
+        </select>
+    <button class = "button-3" name="action" value="second" type="submit" style="font-family:'Open Sans';">Search</button>
+
+</form>
+    <!-- <form action = "http://localhost:5000/" method="post" style="font-family:'Open Sans';position: right; display: inline-block;text-align: right;">
+        <button class = "button-3" name="action" value="second" type="submit" style="font-family:'Open Sans';">Search</button>
+    </form> -->
+
+
+
+
+
+
+
+
+
+    
+
+    {{ title|safe }} 
+    {{ t|safe }}
+    {{ barchart|safe }}
+    {{ newForm|safe }}
+
+    <style>
+        table, th, td
+        {
+            border: 1px solid #053820;
+            border-collapse: collapse;
+            padding: 3px;
+            font-family: "Open Sans";
+            font-size:30px;
+            text-align: middle;
+        }
+
+    </style>
+    {{ desk|safe }}
+
+    
+
+</body>
+</html>

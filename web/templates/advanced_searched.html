@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <style>
+        div.text-container {
+        margin: 0 auto;
+        width: 75%;    
+    }
+
+    .hideContent {
+        overflow: hidden;
+        line-height: 1em;
+        height: 2em;
+    }
+
+    .showContent {
+        line-height: 1em;
+        height: auto;
+    }
+    .showContent{
+        height: auto;
+    }
+
+    h1 {
+        font-size: 24px;        
+    }
+    p {
+        padding: 10px 0;
+    }
+    .show-more {
+        padding: 10px 0;
+        text-align: center;
+    }
+    /* td {
+            width:200px;
+            border: solid 1px;
+        } */
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>ETD Topic Browser</title>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script> 
+    <script type="text/javascript" src="{{ url_for('static', filename='css/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='css/jquery-ui.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='css/test.js') }}"></script>     
+</head>
+
+<body>
+    <script type="text/javascript" src="{{ url_for('static', filename='css/test.js') }}"></script>  
+    <h1>ETD Topic Browser</h1>
+    {{ top|safe }}
+    <br /><br />
+    
+    {{ title|safe }}
+    {{  similar|safe  }}
+    {{ sub|safe }}
+    <style>
+        div, script
+        {
+            text-align: center;
+            align-items: center;
+            align-content: center;
+            align-self: center;
+        }
+
+    </style>
+    <center>
+        {{ barchart|safe }} 
+    </center>
+    <style>
+        table, th, td
+        {
+            border: 1px solid #053a21;
+            border-collapse: collapse;
+            padding: 3px;
+            font-family:'Open Sans';
+            font-size:25px;
+            text-align: middle;
+        }
+
+    </style>
+    
+    {{ desk|safe }}
+    <script type="text/javascript" src="{{ url_for('static', filename='css/test.js') }}"></script>  
+</body>
+</html>
